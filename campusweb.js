@@ -1,3 +1,9 @@
+//----------------------------------------------------------------
+//    AddonUEC
+//    Copyright (C) 2021 medit
+//    This program is distributed under GPLv3. See LICENSE.
+//----------------------------------------------------------------
+
 function hideText(event){
 	event.target.style.display = "none";
 	event.target.previousSibling.style.display = "";

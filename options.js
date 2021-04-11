@@ -1,3 +1,9 @@
+//----------------------------------------------------------------
+//    AddonUEC
+//    Copyright (C) 2021 medit
+//    This program is distributed under GPLv3. See LICENSE.
+//----------------------------------------------------------------
+
 function loadConfig(event){
 	browser.storage.local.get("shozoku").then(item => document.config.shozoku.value = item.shozoku);
 }
