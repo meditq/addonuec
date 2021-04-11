@@ -9,8 +9,8 @@
 	"name": "AddonUEC",
 	"author": "medit",
 	"version": "1.0",
-
 	"description": "学務情報システムなどの不便を解消する電通大生専用拡張機能",
+	"homepage_url": "https://github.com/meditq/addonuec",
 
 	"content_scripts": [
 		{
@@ -36,5 +36,11 @@
 		"page": "options.html",
 		"browser_style": true
 	},
-	"permissions": ["storage"]
+
+	"permissions": ["storage"],
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "{f6f2a389-5d42-4e19-ab49-1973d758419f}"
+		}
+	}
 }
