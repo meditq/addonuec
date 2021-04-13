@@ -23,6 +23,18 @@ function createMask(element){
 	mask.addEventListener("click", showText);
 }
 
+function autoExtend(){
+	if(document.TopForm.time_cnt.value - 0 > 30){
+		try{
+			window.wrappedJSObject.extendSession();
+		}catch(error){
+			console.log(error);
+		}
+	}
+}
+
+exportFunction(autoExtend, window, {defineAs: "autoExtend"});
+
 if(document.title == "シラバス参照"){
 	browser.storage.local.get("shozoku").then(item => {
 		var index = item.shozoku - 1;
@@ -41,4 +53,5 @@ if(document.title == "シラバス参照"){
 }else if(document.title == ""){
 	var username = document.getElementsByClassName("user")[0];
 	if(username) createMask(username);
+	if(document.TopForm) setInterval("autoExtend()", 600000);
 }
