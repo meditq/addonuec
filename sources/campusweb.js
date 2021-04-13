@@ -53,5 +53,5 @@ if(document.title == "シラバス参照"){
 }else if(document.title == ""){
 	var username = document.getElementsByClassName("user")[0];
 	if(username) createMask(username);
-	if(document.TopForm) setInterval("autoExtend()", 600000);
+	if(document.TopForm) setInterval("autoExtend()", 302000);
 }
