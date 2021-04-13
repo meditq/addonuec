@@ -40,7 +40,8 @@
 	"permissions": ["storage"],
 	"browser_specific_settings": {
 		"gecko": {
-			"id": "{f6f2a389-5d42-4e19-ab49-1973d758419f}"
+			"id": "{f6f2a389-5d42-4e19-ab49-1973d758419f}",
+			"update_url": "https://raw.githubusercontent.com/meditq/addonuec/main/updates.json"
 		}
 	}
 }
