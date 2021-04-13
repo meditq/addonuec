@@ -27,7 +27,7 @@
 
 https://github.com/meditq/addonuec/releases/download/v1.0.0/addonuec-1.0.0-fx.xpi
 
-インストールが完了したらアドオンマネージャを開いて設定を行ってください。
+インストールが完了したらアドオンマネージャーを開き(Ctrl+Shift+A)、設定を行ってください。
 
 このアドオンは自動更新に対応しています。
 
