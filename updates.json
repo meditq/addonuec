@@ -3,6 +3,9 @@
 		"{f6f2a389-5d42-4e19-ab49-1973d758419f}": {
 			"updates": [
 				{
+					"version": "1.0.0",
+					"update_link": "https://github.com/meditq/addonuec/releases/download/v1.0.0/addonuec-1.0.0-fx.xpi",
+					"update_hash": "sha256:86b1947c96406742002e26d467e56070dcd44eefcec4860955577b44751d4f05"
 				}
 			]
 		}
