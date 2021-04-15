@@ -4,12 +4,14 @@
 //    This program is distributed under GPLv3. See LICENSE.
 //----------------------------------------------------------------
 
-function openWebClassWindow(url){
-	location.href = url;
-}
-
-exportFunction(openWebClassWindow, window, {defineAs: "openWebClassWindow"});
-
 for(elem of document.getElementsByClassName("showLoginButton")){
 	elem.removeAttribute("href");
 }
+
+var injectCode = `function openWebClassWindow(url){
+	location.href = url;
+}`;
+
+var script = document.createElement("script");
+script.textContent = injectCode;
+document.body.appendChild(script);

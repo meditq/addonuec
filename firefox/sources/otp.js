@@ -40,8 +40,8 @@ browser.storage.local.get("secret").then(item => {
 	if(item.secret){
 		if(!document.getElementsByClassName("input_error_for_user")[0]){
 			totp(item.secret).then(code => {
-				document.MFALogin.authcode.value = code;
-				document.MFALogin.login.click();
+				document.getElementsByName("authcode")[0].value = code;
+				document.getElementsByName("login")[0].click();
 			});
 		}else{
 			alert("自動認証に失敗しました。手動でコードを入力するか、[リセット]を押して自動認証をやり直してください。");

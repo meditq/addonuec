@@ -24,25 +24,22 @@ function createMask(element){
 }
 
 function autoExtend(){
-	if(document.TopForm.time_cnt.value - 0 > 30){
-		try{
-			window.wrappedJSObject.extendSession();
-		}catch(error){
-			console.log(error);
-		}
+	if(document.getElementsByName("time_cnt")[0].value - 0 > 1){
+		document.querySelector('input[type="button"]').click();
 	}
 }
 
-exportFunction(autoExtend, window, {defineAs: "autoExtend"});
-
 if(document.title == "シラバス参照"){
-	browser.storage.local.get("shozoku").then(item => {
-		var index = item.shozoku - 1;
-		if(!document.SearchForm.jikanwariShozokuCode[index]) index = 0;
-		document.SearchForm.jikanwariShozokuCode.selectedIndex = index;
-	});
-	document.InputForm[6].type = "submit";
-	document.SearchForm[15].type = "submit";
+	if(document.getElementById("jikanwariInputForm").name == "InputForm"){
+		browser.storage.local.get("shozoku").then(item => {
+			var index = item.shozoku - 1;
+			var shozokuList = document.getElementById("jikanwariShozokuCode");
+			if(!shozokuList[index]) index = 0;
+			shozokuList.selectedIndex = index;
+		});
+		document.getElementById("jikanwariInputForm")[6].type = "submit";
+		document.getElementById("jikanwariSearchForm")[15].type = "submit";
+	}
 
 }else if(document.title == "単位修得状況照会"){
 	var personalInfo = document.getElementsByTagName("table")[1];
@@ -51,7 +48,9 @@ if(document.title == "シラバス参照"){
 	}
 
 }else if(document.title == ""){
-	var username = document.getElementsByClassName("user")[0];
-	if(username) createMask(username);
-	if(document.TopForm) setInterval(autoExtend, 302000);
+	if(document.getElementsByName("TopForm")[0]){
+		var username = document.getElementsByClassName("user")[0];
+		if(username) createMask(username);
+		setInterval(autoExtend, 2000);
+	}
 }
