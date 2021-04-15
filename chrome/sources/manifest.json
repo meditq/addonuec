@@ -6,6 +6,10 @@
 	"description": "学務情報システムなどの不便を解消する電通大生専用拡張機能",
 	"homepage_url": "https://github.com/meditq/addonuec",
 
+	"icons": {
+		"128": "icon.png"
+	},
+
 	"content_scripts": [
 		{
 			"matches": ["*://webclass.cdel.uec.ac.jp/", "*://webclass.cdel.uec.ac.jp/index.html"],
