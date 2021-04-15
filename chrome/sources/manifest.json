@@ -1,9 +1,3 @@
-//----------------------------------------------------------------
-//    AddonUEC
-//    Copyright (C) 2021 medit
-//    This program is distributed under GPLv3. See LICENSE.
-//----------------------------------------------------------------
-
 {
 	"manifest_version": 2,
 	"name": "AddonUEC",
