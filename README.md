@@ -1,7 +1,7 @@
 # AddonUEC
 学務情報システムなどの不便を解消する電通大生専用拡張機能
 
-現時点ではFirefox用アドオンとして提供しています。そのうちChromeに対応するかもしれません。
+現時点ではFirefox用アドオンとして提供しています。近日中にChrome版を公開します。
 
 ## 機能
 このアドオンは以下のことをします。
@@ -23,13 +23,16 @@
 
 ## インストール方法
 ### Firefox
-最新版(v1.0.0)は以下のリンクをクリックするとインストールできます。
+最新版(v1.1.0)は以下のリンクをクリックするとインストールできます。
 
-https://github.com/meditq/addonuec/releases/download/v1.0.0/addonuec-1.0.0-fx.xpi
+https://github.com/meditq/addonuec/releases/download/v1.1.0/addonuec-1.1.0-fx.xpi
 
 インストールが完了したらアドオンマネージャーを開き(Ctrl+Shift+A)、設定を行ってください。
 
 このアドオンは自動更新に対応しています。
+
+### Chrome
+現在Chrome Web Storeの審査待ちです。もうしばらくお待ちください。
 
 ## 権利表記
 Copyright (C) 2021 medit
