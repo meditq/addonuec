@@ -1,0 +1,41 @@
+//----------------------------------------------------------------
+//    AddonUEC
+//    Copyright (C) 2021 medit
+//    This program is distributed under GPLv3. See LICENSE.
+//----------------------------------------------------------------
+
+{
+	"manifest_version": 2,
+	"name": "AddonUEC",
+	"author": "medit",
+	"version": "1.1.0",
+	"description": "学務情報システムなどの不便を解消する電通大生専用拡張機能",
+	"homepage_url": "https://github.com/meditq/addonuec",
+
+	"content_scripts": [
+		{
+			"matches": ["*://webclass.cdel.uec.ac.jp/", "*://webclass.cdel.uec.ac.jp/index.html"],
+			"js": ["webclass.js"]
+		},
+		{
+			"matches": ["*://campusweb.office.uec.ac.jp/campusweb/campussquare.do?*"],
+			"all_frames": true,
+			"js": ["campusweb.js"]
+		},
+		{
+			"matches": ["https://shibboleth.cc.uec.ac.jp/mfa/MFAuth.php?*"],
+			"js": ["otp.js"]
+		}
+	],
+
+	"background": {
+		"scripts": ["init.js"]
+	},
+
+	"options_ui": {
+		"page": "options.html",
+		"browser_style": true
+	},
+
+	"permissions": ["storage"]
+}
