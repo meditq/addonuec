@@ -23,7 +23,7 @@ function loadOtpStatus(event){
 			document.otpSetting.clear.style.display = "inline";
 		}else{
 			document.otpSetting.otpStatus.innerHTML = "設定されていません";
-			document.otpSetting.clear.style.display = "inline";
+			document.otpSetting.clear.style.display = "none";
 		}
 	});
 }
