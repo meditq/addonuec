@@ -24,7 +24,7 @@ function createMask(element){
 }
 
 function autoExtend(){
-	if(document.getElementsByName("time_cnt")[0].value - 0 > 1){
+	if(document.getElementsByName("time_cnt")[0].value - 0 > 30){
 		document.querySelector('input[type="button"]').click();
 	}
 }
@@ -51,6 +51,6 @@ if(document.title == "シラバス参照"){
 	if(document.getElementsByName("TopForm")[0]){
 		var username = document.getElementsByClassName("user")[0];
 		if(username) createMask(username);
-		setInterval(autoExtend, 2000);
+		setInterval(autoExtend, 302000);
 	}
 }
