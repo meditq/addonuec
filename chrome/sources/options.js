@@ -4,7 +4,7 @@
 //    This program is distributed under GPLv3. See LICENSE.
 //----------------------------------------------------------------
 
-function loadConfig(){
+function loadConfig(event){
 	chrome.storage.local.get("shozoku", item => document.config.shozoku.value = item.shozoku);
 }
 
@@ -16,7 +16,7 @@ function saveConfig(event){
 	});
 }
 
-function loadOtpStatus(){
+function loadOtpStatus(event){
 	chrome.storage.local.get("secret", item => {
 		if(item.secret){
 			document.otpSetting.otpStatus.innerHTML = "設定されています";
@@ -42,7 +42,7 @@ function saveOtpSecret(event){
 	});
 }
 
-function clearOtpSecret(){
+function clearOtpSecret(event){
 	if(chrome.extension.getBackgroundPage().confirm("本当に消去しますか？")){
 		chrome.storage.local.remove("secret", () => {
 			if(chrome.runtime.lastError) chrome.extension.getBackgroundPage().alert("消去に失敗しました: " + chrome.runtime.lastError);
