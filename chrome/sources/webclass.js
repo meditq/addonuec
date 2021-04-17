@@ -8,10 +8,10 @@ for(elem of document.getElementsByClassName("showLoginButton")){
 	elem.removeAttribute("href");
 }
 
-var injectCode = `function openWebClassWindow(url){
+const injectCode = `function openWebClassWindow(url){
 	location.href = url;
 }`;
 
-var script = document.createElement("script");
+const script = document.createElement("script");
 script.textContent = injectCode;
 document.body.appendChild(script);

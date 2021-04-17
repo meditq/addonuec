@@ -26,8 +26,8 @@ function loadOtpStatus(event){
 }
 
 function saveOtpSecret(event){
-	var str = document.otpSetting.otpURL.value;
-	var secret;
+	const str = document.otpSetting.otpURL.value;
+	const secret;
 	if((secret = /(?<=secret=|^)[A-Z2-7]{32}/.exec(str)) == null){
 		alert("無効な入力です");
 		event.preventDefault();
