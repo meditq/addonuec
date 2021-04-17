@@ -4,7 +4,7 @@
 //    This program is distributed under GPLv3. See LICENSE.
 //----------------------------------------------------------------
 
-function loadConfig(event){
+function loadConfig(){
 	browser.storage.local.get("shozoku").then(item => document.config.shozoku.value = item.shozoku);
 }
 
@@ -13,7 +13,7 @@ function saveConfig(event){
 	browser.storage.local.set({"shozoku": parseInt(document.config.shozoku.value, 10)}).then(alert("保存しました"), error => alert("保存に失敗しました: " + error));
 }
 
-function loadOtpStatus(event){
+function loadOtpStatus(){
 	browser.storage.local.get("secret").then(item => {
 		if(item.secret){
 			document.otpSetting.otpStatus.innerHTML = "設定されています";
@@ -36,7 +36,7 @@ function saveOtpSecret(event){
 	browser.storage.local.set({"secret": secret[0]}).then(alert("鍵を保存しました"), error => alert("鍵の保存に失敗しました: " + error));
 }
 
-function clearOtpSecret(event){
+function clearOtpSecret(){
 	if(confirm("本当に消去しますか？")){
 		browser.storage.local.remove("secret").then(alert("消去しました"), error => alert("消去に失敗しました: " + error)).then(location.reload());
 	}
