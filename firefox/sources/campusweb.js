@@ -15,7 +15,7 @@ function showText(event){
 }
 
 function createMask(element){
-	const mask = element.cloneNode(false);
+	var mask = element.cloneNode(false);
 	mask.textContent = "＊＊＊＊＊＊";
 	mask.style.display = "none";
 	element.parentNode.insertBefore(mask, element);
@@ -32,8 +32,8 @@ function autoExtend(){
 if(document.title == "シラバス参照"){
 	if(document.getElementById("jikanwariInputForm").name == "InputForm"){
 		browser.storage.local.get("shozoku").then(item => {
-			const index = item.shozoku - 1;
-			const shozokuList = document.getElementById("jikanwariShozokuCode");
+			var index = item.shozoku - 1;
+			var shozokuList = document.getElementById("jikanwariShozokuCode");
 			if(!shozokuList[index]) index = 0;
 			shozokuList.selectedIndex = index;
 		});
@@ -42,14 +42,14 @@ if(document.title == "シラバス参照"){
 	}
 
 }else if(document.title == "単位修得状況照会"){
-	const personalInfo = document.getElementsByTagName("table")[1];
+	var personalInfo = document.getElementsByTagName("table")[1];
 	if(personalInfo.getElementsByTagName("th")[0].textContent.includes("氏名")){
 		for(cell of personalInfo.querySelectorAll("td")) createMask(cell);
 	}
 
 }else if(document.title == ""){
 	if(document.getElementsByName("TopForm")[0]){
-		const username = document.getElementsByClassName("user")[0];
+		var username = document.getElementsByClassName("user")[0];
 		if(username) createMask(username);
 		setInterval(autoExtend, 302000);
 	}

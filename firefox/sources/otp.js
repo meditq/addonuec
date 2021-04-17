@@ -11,11 +11,11 @@ function base32decode(str){
 	/* it works correctly only when str.length is a multiple of 8 */
 
 	const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
-	const bits = "";
+	var bits = "";
 	for(let i = 0; i < str.length; i++){
 		bits += chars.indexOf(str.charAt(i)).toString(2).padStart(5, "0");
 	}
-	const ret = new Uint8Array(bits.length / 8);
+	var ret = new Uint8Array(bits.length / 8);
 	for(let i = 0; i < ret.length; i++){
 		ret[i] = parseInt(bits.substr(i * 8, 8), 2);
 	}
@@ -23,16 +23,16 @@ function base32decode(str){
 }
 
 async function hotp(secret, count){
-	const key = await crypto.subtle.importKey("raw", base32decode(secret), {name: "HMAC", hash: "SHA-1"}, false, ["sign"]);
-	const msg = new DataView(new ArrayBuffer(8));
+	var key = await crypto.subtle.importKey("raw", base32decode(secret), {name: "HMAC", hash: "SHA-1"}, false, ["sign"]);
+	var msg = new DataView(new ArrayBuffer(8));
 	msg.setBigUint64(0, BigInt(count));
-	const signature = new DataView(await crypto.subtle.sign("HMAC", key, msg));
-	const code = (signature.getUint32(signature.getUint8(19) & 0x0F) & 0x7FFFFFFF).toString(10).padStart(digits, "0").slice(-digits);
+	var signature = new DataView(await crypto.subtle.sign("HMAC", key, msg));
+	var code = (signature.getUint32(signature.getUint8(19) & 0x0F) & 0x7FFFFFFF).toString(10).padStart(digits, "0").slice(-digits);
 	return code;
 }
 
 async function totp(secret){
-	const count = Math.floor(Date.now() / 1000 / duration);
+	var count = Math.floor(Date.now() / 1000 / duration);
 	return await hotp(secret, count);
 }
 

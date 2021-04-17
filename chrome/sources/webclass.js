@@ -12,6 +12,6 @@ const injectCode = `function openWebClassWindow(url){
 	location.href = url;
 }`;
 
-const script = document.createElement("script");
+var script = document.createElement("script");
 script.textContent = injectCode;
 document.body.appendChild(script);
