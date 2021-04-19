@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "AddonUEC",
 	"author": "medit",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"description": "学務情報システムなどの不便を解消する電通大生専用拡張機能",
 	"homepage_url": "https://github.com/meditq/addonuec",
 

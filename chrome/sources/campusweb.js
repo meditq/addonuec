@@ -29,7 +29,7 @@ function autoExtend(){
 	}
 }
 
-if(document.title == "シラバス参照"){
+if(document.title.startsWith("シラバス参照")){
 	if(document.getElementById("jikanwariInputForm").name == "InputForm"){
 		chrome.storage.local.get("shozoku", item => {
 			var index = item.shozoku - 1;
