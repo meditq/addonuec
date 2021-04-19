@@ -23,9 +23,9 @@ Firefox・Chromeに対応しています。
 
 ## インストール方法
 ### Firefox
-最新版(v1.1.0)は以下のリンクをクリックするとインストールできます。
+最新版(v1.1.2)は以下のリンクをクリックするとインストールできます。
 
-https://github.com/meditq/addonuec/releases/download/v1.1.0/addonuec-1.1.0-fx.xpi
+https://github.com/meditq/addonuec/releases/download/v1.1.2/addonuec-1.1.2-fx.xpi
 
 インストールが完了したらアドオンマネージャーを開き(Ctrl+Shift+A)、設定を行ってください。
 
@@ -36,7 +36,7 @@ Chrome ウェブストアの以下のリンクよりインストールできま�
 
 https://chrome.google.com/webstore/detail/addonuec/mckbbmpkeolpgdbbgajafjbdkncjfegh/
 
-インストール後は[拡張機能のオプション]から設定を行ってください。
+インストール後は拡張機能の設定からAddonUECの[詳細]を開き、[拡張機能のオプション]から設定を行ってください。
 
 ## 権利表記
 Copyright (C) 2021 medit
