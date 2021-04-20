@@ -8,9 +8,9 @@ function loadConfig(event){
 	browser.storage.local.get("shozoku").then(item => document.config.shozoku.value = item.shozoku);
 }
 
-function saveConfig(event){
+function saveShozoku(event){
 	event.preventDefault();
-	browser.storage.local.set({"shozoku": parseInt(document.config.shozoku.value, 10)}).then(alert("保存しました"), error => alert("保存に失敗しました: " + error));
+	browser.storage.local.set({"shozoku": parseInt(document.config.shozoku.value, 10)}).catch(error => alert("保存に失敗しました: " + error));
 }
 
 function loadOtpStatus(event){
@@ -44,6 +44,6 @@ function clearOtpSecret(event){
 
 document.addEventListener("DOMContentLoaded", loadConfig);
 document.addEventListener("DOMContentLoaded", loadOtpStatus);
-document.config.addEventListener("submit", saveConfig);
+document.config.shozoku.addEventListener("change", saveShozoku);
 document.otpSetting.addEventListener("submit", saveOtpSecret);
 document.otpSetting.clear.addEventListener("click", clearOtpSecret);
