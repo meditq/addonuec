@@ -5,12 +5,20 @@
 //----------------------------------------------------------------
 
 function loadConfig(event){
-	browser.storage.local.get("shozoku").then(item => document.syllabus.shozoku.value = item.shozoku);
+	browser.storage.local.get().then(item => {
+		document.syllabus.shozoku.value = item.shozoku;
+		document.sso.autologin.value = item.autologin;
+	});
 }
 
 function saveShozoku(event){
 	event.preventDefault();
 	browser.storage.local.set({"shozoku": parseInt(document.syllabus.shozoku.value, 10)}).catch(error => alert("保存に失敗しました: " + error));
+}
+
+function saveAutoLogin(event){
+	event.preventDefault();
+	browser.storage.local.set({"autologin": document.sso.autologin.value}).catch(error => alert("保存に失敗しました: " + error));
 }
 
 function loadOtpStatus(event){
@@ -45,5 +53,6 @@ function clearOtpSecret(event){
 document.addEventListener("DOMContentLoaded", loadConfig);
 document.addEventListener("DOMContentLoaded", loadOtpStatus);
 document.syllabus.shozoku.addEventListener("change", saveShozoku);
+document.sso.autologin.addEventListener("change", saveAutoLogin);
 document.otpSetting.addEventListener("submit", saveOtpSecret);
 document.otpSetting.clear.addEventListener("click", clearOtpSecret);
