@@ -10,9 +10,19 @@
 	</head>
 	<body>
 		<h2>シラバス検索</h2>
-		<form name="config">
-			<p><label>開講所属の初期値：上から<input type="number" name="shozoku" min="1" max="30" required style="width:4em;" />番目</label></p>
-			<p>※例：「指定なし」は1番目、「情報理工学域」は2番目を選択</p>
+		<form name="syllabus">
+			<p><label>開講所属の初期値：上から<input type="number" name="shozoku" min="1" max="30" required style="width:4em;" />番目</label><br>
+			※例：「指定なし」は1番目、「情報理工学域」は2番目を選択</p>
+		</form>
+		<h2>統合認証システム</h2>
+		<form name="sso">
+			<p>自動ログイン機能はブラウザのパスワード自動入力を検知してログイン画面を飛ばす機能です。このアドオンはID・パスワードを取得しません。</p>
+			<p><label>自動ログイン：
+				<select name="autologin">
+					<option value="on">オン</option>
+					<option value="off">オフ</option>
+				</select>
+			</label></p>
 		</form>
 		<h2>自動2要素認証</h2>
 		トークンアプリを利用している場合のみ2要素認証の自動化ができます。下記手順にしたがって設定してください。
