@@ -5,14 +5,23 @@
 //----------------------------------------------------------------
 
 function loadConfig(event){
-	chrome.storage.local.get("shozoku", item => document.config.shozoku.value = item.shozoku);
+	chrome.storage.local.get(item => {
+		document.syllabus.shozoku.value = item.shozoku;
+		document.sso.autologin.value = item.autologin;
+	});
 }
 
-function saveConfig(event){
+function saveShozoku(event){
 	event.preventDefault();
-	chrome.storage.local.set({"shozoku": parseInt(document.config.shozoku.value, 10)}, () => {
-		if(chrome.runtime.lastError) chrome.extension.getBackgroundPage().alert("保存に失敗しました: " + chrome.runtime.lastError);
-		else chrome.extension.getBackgroundPage().alert("保存しました");
+	chrome.storage.local.set({"shozoku": parseInt(document.syllabus.shozoku.value, 10)}, () => {
+		if(chrome.runtime.lastError) alert("保存に失敗しました: " + chrome.runtime.lastError);
+	});
+}
+
+function saveAutoLogin(event){
+	event.preventDefault();
+	chrome.storage.local.set({"autologin": document.sso.autologin.value}, () => {
+		if(chrome.runtime.lastError) alert("保存に失敗しました: " + chrome.runtime.lastError);
 	});
 }
 
@@ -54,6 +63,7 @@ function clearOtpSecret(event){
 
 document.addEventListener("DOMContentLoaded", loadConfig);
 document.addEventListener("DOMContentLoaded", loadOtpStatus);
-document.config.addEventListener("submit", saveConfig);
+document.syllabus.shozoku.addEventListener("change", saveShozoku);
+document.sso.autologin.addEventListener("change", saveAutoLogin);
 document.otpSetting.addEventListener("submit", saveOtpSecret);
 document.otpSetting.clear.addEventListener("click", clearOtpSecret);

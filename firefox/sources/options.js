@@ -13,12 +13,16 @@ function loadConfig(event){
 
 function saveShozoku(event){
 	event.preventDefault();
-	browser.storage.local.set({"shozoku": parseInt(document.syllabus.shozoku.value, 10)}).catch(error => alert("保存に失敗しました: " + error));
+	browser.storage.local.set({"shozoku": parseInt(document.syllabus.shozoku.value, 10)}).catch(error => {
+		alert("保存に失敗しました: " + error);
+	});
 }
 
 function saveAutoLogin(event){
 	event.preventDefault();
-	browser.storage.local.set({"autologin": document.sso.autologin.value}).catch(error => alert("保存に失敗しました: " + error));
+	browser.storage.local.set({"autologin": document.sso.autologin.value}).catch(error => {
+		alert("保存に失敗しました: " + error);
+	});
 }
 
 function loadOtpStatus(event){

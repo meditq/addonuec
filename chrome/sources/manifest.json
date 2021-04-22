@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "AddonUEC",
 	"author": "medit",
-	"version": "1.1.2",
+	"version": "1.2.0",
 	"description": "学務情報システムなどの不便を解消する電通大生専用拡張機能",
 	"homepage_url": "https://github.com/meditq/addonuec",
 
@@ -23,6 +23,10 @@
 		{
 			"matches": ["https://shibboleth.cc.uec.ac.jp/mfa/MFAuth.php?*"],
 			"js": ["otp.js"]
+		},
+		{
+			"matches": ["https://shibboleth.cc.uec.ac.jp/idp/profile/SAML2/Redirect/SSO?*"],
+			"js": ["sso.js"]
 		}
 	],
 
