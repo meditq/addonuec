@@ -52,5 +52,9 @@ if(document.title.startsWith("シラバス参照")){
 		var username = document.getElementsByClassName("user")[0];
 		if(username) createMask(username);
 		setInterval(autoExtend, 302000);
+	}else if(document.getElementsByName("Generator")[0].content.includes("Word")){
+		for(link of document.getElementsByTagName("a")){
+			link.target = "_blank";
+		}
 	}
 }
