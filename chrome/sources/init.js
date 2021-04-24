@@ -6,5 +6,5 @@
 
 chrome.storage.local.get(item => {
 	if(!item.shozoku) chrome.storage.local.set({"shozoku": 2});
-	if(!item.autologin) chrome.storage.local.set({"autologin": "on"});
+//	if(!item.autologin) chrome.storage.local.set({"autologin": "on"});
 });

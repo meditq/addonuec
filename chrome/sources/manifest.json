@@ -23,10 +23,6 @@
 		{
 			"matches": ["https://shibboleth.cc.uec.ac.jp/mfa/MFAuth.php?*"],
 			"js": ["otp.js"]
-		},
-		{
-			"matches": ["https://shibboleth.cc.uec.ac.jp/idp/profile/SAML2/Redirect/SSO?*"],
-			"js": ["sso.js"]
 		}
 	],
 

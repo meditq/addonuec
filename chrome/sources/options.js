@@ -7,7 +7,7 @@
 function loadConfig(event){
 	chrome.storage.local.get(item => {
 		document.syllabus.shozoku.value = item.shozoku;
-		document.sso.autologin.value = item.autologin;
+//		document.sso.autologin.value = item.autologin;
 	});
 }
 
@@ -18,12 +18,12 @@ function saveShozoku(event){
 	});
 }
 
-function saveAutoLogin(event){
-	event.preventDefault();
-	chrome.storage.local.set({"autologin": document.sso.autologin.value}, () => {
-		if(chrome.runtime.lastError) alert("保存に失敗しました: " + chrome.runtime.lastError);
-	});
-}
+//function saveAutoLogin(event){
+//	event.preventDefault();
+//	chrome.storage.local.set({"autologin": document.sso.autologin.value}, () => {
+//		if(chrome.runtime.lastError) alert("保存に失敗しました: " + chrome.runtime.lastError);
+//	});
+//}
 
 function loadOtpStatus(event){
 	chrome.storage.local.get("secret", item => {
@@ -64,6 +64,6 @@ function clearOtpSecret(event){
 document.addEventListener("DOMContentLoaded", loadConfig);
 document.addEventListener("DOMContentLoaded", loadOtpStatus);
 document.syllabus.shozoku.addEventListener("change", saveShozoku);
-document.sso.autologin.addEventListener("change", saveAutoLogin);
+//document.sso.autologin.addEventListener("change", saveAutoLogin);
 document.otpSetting.addEventListener("submit", saveOtpSecret);
 document.otpSetting.clear.addEventListener("click", clearOtpSecret);
