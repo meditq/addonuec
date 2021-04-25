@@ -28,9 +28,9 @@ Firefox・Chromeに対応しています。
 
 ## インストール方法
 ### Firefox
-最新版(v1.1.2)は以下のリンクをクリックするとインストールできます。
+最新版(v1.2.0)は以下のリンクをクリックするとインストールできます。
 
-https://github.com/meditq/addonuec/releases/download/v1.1.2/addonuec-1.1.2-fx.xpi
+https://github.com/meditq/addonuec/releases/download/v1.2.0/addonuec-1.2.0-fx.xpi
 
 インストールが完了したらアドオンマネージャーを開き(Ctrl+Shift+A)、設定を行ってください。
 
