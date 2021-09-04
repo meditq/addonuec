@@ -7,4 +7,5 @@
 browser.storage.local.get().then(item => {
 	if(!item.shozoku) browser.storage.local.set({"shozoku": 2});
 	if(!item.autologin) browser.storage.local.set({"autologin": "on"});
+	if(item.autologined) browser.storage.local.remove("autologined");
 });
