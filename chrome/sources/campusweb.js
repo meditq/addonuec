@@ -56,5 +56,8 @@ if(document.title.startsWith("シラバス参照")){
 		for(link of document.getElementsByTagName("a")){
 			link.target = "_blank";
 		}
+		for(item of document.querySelectorAll("*[lang]")){
+			item.removeAttribute("lang");
+		}
 	}
 }
